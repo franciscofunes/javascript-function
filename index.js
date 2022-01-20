@@ -261,3 +261,14 @@ const [meow, setName] = useCat();
 
 // Conclusion
 //The inner lexical environment or the inner functions in the array had accessed to the local variables and the outer useCat function
+
+/************************/
+
+// Recursion
+
+const theMeaningOFLife = () => {
+  theMeaningOFLife();
+};
+
+// when this function encounter the function call itself it will go into an infinite loop
+const whatIs = theMeaningOFLife();
