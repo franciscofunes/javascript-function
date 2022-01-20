@@ -59,3 +59,9 @@ const makeBeer2 = function (qty) {
 // because there are not hoisted
 // make it easier to understand where their belong in the context of an application
 // less likely to pollute the global namespace
+
+// Immediately Invoked Function Expression IIEF
+//example
+(function () {
+  const x = 23;
+})();
