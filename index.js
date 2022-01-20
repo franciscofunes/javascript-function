@@ -61,6 +61,7 @@ const makeBeer2 = function (qty) {
 // less likely to pollute the global namespace
 
 // Immediately Invoked Function Expression IIEF
+// By wrapping in parenthesis, we can make it an IIFE and call it immediately with the ()
 //example
 (function () {
   const x = 23;
