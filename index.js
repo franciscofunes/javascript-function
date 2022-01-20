@@ -223,3 +223,41 @@ const squareIt = (num) => num ** 2;
 const squared3 = numbers.map(squareIt);
 
 // this is less performant than a for loop but it's still a good example
+
+/************************/
+
+// HOF, Closures
+
+// Lexical environment
+
+//Example 1
+//Lexical env a
+const a = 1;
+
+const outer = () => {
+  //Lexical env b
+  const b = 2;
+  console.log(a, b, c); // 1 2 undefined
+  const inner = (message) => {
+    // Lexical env c
+    const c = 3;
+    return a + b + c;
+  };
+  return inner;
+};
+
+//inner function can remember the local variables in the outer function
+// but outer function can't remember the local variables in the inner function
+
+//Example 2
+// A closure inspire by react hooks
+function useCat() {
+  let name = "Fluffy";
+
+  return [() => `Meow ${name}`, (newName) => (name = newName)];
+}
+
+const [meow, setName] = useCat();
+
+// Conclusion
+//The inner lexical environment or the inner functions in the array had accessed to the local variables and the outer useCat function
