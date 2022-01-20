@@ -176,5 +176,50 @@ const impure2 = () => {
 };
 
 // a pure function is one that only depends on its input parameters and does not depend on any global variables
-
+// easy to test, easy to think about it
+// pure functions will help to compose your application as a collection of higher order functions
 const pure = (x) => x ** 2;
+
+/************************/
+
+// Higher Order Functions HOF
+
+// you can functions as arguments to other functions
+// Use functions a return value for other functions
+// very common in javascript specially when you work with async code
+
+const hof1 = (inputFun) => {
+  const called = inputFun();
+  return () => "output fun";
+};
+
+// setTimeout it's a simple example of a HOF
+//Example
+let haveFun = () => console.log("fun");
+
+setTimeout(haveFun, 50);
+setTimeout(() => console.log("fun"), 50);
+
+// Another example of functional code
+// we can replace traditional for loops using map
+
+// Example
+const numbers = [1, 2, 3, 4, 5];
+
+const squared = [];
+
+for (const i of numbers) {
+  squared.push(i ** 2);
+}
+
+console.log(squared); // [1, 4, 9, 16, 25]
+
+// we replace everything with a single line of code
+const squared2 = numbers.map((num) => num ** 2);
+
+console.log(squared2); // [1, 4, 9, 16, 25]
+
+const squareIt = (num) => num ** 2;
+const squared3 = numbers.map(squareIt);
+
+// this is less performant than a for loop but it's still a good example
