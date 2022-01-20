@@ -106,3 +106,50 @@ function makeDinner(...args) {
 // that allows to call the function with multiple position arguments
 // access them as an array inside the function body
 makeDinner("🍳", "🥪", "🍺");
+
+/************************/
+
+// Arrow Functions
+
+//Refactor one of our earlier functions
+
+const makeBeer3 = function beerFun(qty) {
+  return "🍺".repeat(qty);
+};
+
+// Arrow refactor
+// cool thing about this syntax is that you omit curly braces it will return the value of the function implicitly
+const makeWine = (qty) => "🍷".repeat(qty);
+
+// if you add the curly braces you still need to add the return keyword
+
+//arrow function are more than sintactic sugar
+// Other caracteristics you should know about arrow functions
+// 1. First of all there will always be expression
+
+// (qty) => '🍺'.repeat(qty); // Error!
+
+// 2. They don't have their own this keyword
+
+// ES5 Arrow 'this' Example
+function Dog() {
+  var self = this;
+
+  this.breed = "Wolf 🐺";
+
+  setTimeout(function () {
+    console.log(this.breed); // undefined
+    console.log(self.breed); // Wolf 🐺
+  }, 0);
+}
+
+// with arrow function we don't need this self variable
+function Dog() {
+  this.breed = "Wolf 🐺";
+
+  setTimeout(() => {
+    console.log(this.breed); // Wolf 🐺
+  }, 0);
+}
+
+// always read in a framework like React or Vue the use of arrow functions
