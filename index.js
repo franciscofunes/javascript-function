@@ -152,4 +152,29 @@ function Dog() {
   }, 0);
 }
 
-// always read in a framework like React or Vue the use of arrow functions
+// always read the documentation in a framework like React or Vue to see the use of arrow functions
+
+/************************/
+
+// Pure Functions
+
+//what makes a functions pure, we start by showing an impure function
+
+//global variable
+let x = 0;
+
+// function mutates the global variable and uses in its return value
+// this make the code difficult to work because it's operating with values outside of its scope
+const impure = () => {
+  x++;
+  return x ** 2;
+};
+
+const impure2 = () => {
+  x--;
+  return x.toString();
+};
+
+// a pure function is one that only depends on its input parameters and does not depend on any global variables
+
+const pure = (x) => x ** 2;
